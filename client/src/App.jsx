@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import route from "./route";
+import route from "./config/route";
 
 export default function App() {
   const [data, setData] = useState(null);
