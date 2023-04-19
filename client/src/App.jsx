@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import route from "./config/route";
 
 export default function App() {
   const [data, setData] = useState(null);
@@ -7,7 +6,7 @@ export default function App() {
   useEffect(() => 
   {
     const fetchData = async () => {
-      const response = await fetch(route.test);
+      const response = await fetch("https://blogity-blog.vercel.app/test");
       const jsonData = await response.json();
       setData(jsonData.data);
     };
