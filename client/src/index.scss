@@ -1,0 +1,97 @@
+:root {
+  --primary-light: #8abdff;
+  --primary: #6d5dfc;
+  --primary-dark: #5b0eeb;
+
+  --white: #FFFFFF;
+  --greyLight-1: #E4EBF5;
+  --greyLight-2: #c8d0e7;
+  --greyLight-3: #bec8e4;
+  --greyDark: #9baacf;
+  --greyDark-2: #737d97;
+}
+
+$shadow: .3rem .3rem .6rem var(--greyLight-2),
+  -.2rem -.2rem .5rem var(--white);
+$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
+  inset -.2rem -.2rem .5rem var(--white);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px    100% = 16px
+  overflow-y: scroll;
+  background: var(--greyLight-1);
+
+  @media screen and (min-width: 900px) {
+    font-size: 75%;
+  }
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background: var(--greyLight-1);
+}
+
+.components {
+  width: 75rem;
+  height: fit-content;
+  border-radius: 3rem;
+  box-shadow: .8rem .8rem 1.4rem var(--greyLight-2),
+    -.2rem -.2rem 1.8rem var(--white);
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 17.6rem 19rem 20.4rem;
+  grid-template-rows: repeat(autofit, min-content);
+  grid-column-gap: 5rem;
+  grid-row-gap: 2.5rem;
+  align-items: center;
+}
+
+/*  CHIP  */
+.chip {
+  // grid-column: 2 / 3;
+  // grid-row: 3 / 4;
+  justify-self: center;
+  width: 20rem;
+  height: 20rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: $shadow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  // text-align: justify;
+  
+  h2 {
+    width: 100%;
+    // height: 3rem;
+    // border-radius: 1rem;
+    // margin: 0 0 0 .2rem;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    font-size: 1.8rem;
+    color: var(--primary);
+  }
+  
+  p {
+    text-align: justify;
+    font-size: 1rem;
+    // margin-left: -1.8rem;
+    color: var(--greyDark-2);
+  }
+}
