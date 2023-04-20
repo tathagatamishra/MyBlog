@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./app.scss";
+import "./Home.scss";
 
-export default function App() {
+export default function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {

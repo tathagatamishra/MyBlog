@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.scss";
+import Home from "./homepage/Home.jsx";
+import "./main.scss";
 import Navbar from "./components/Navbar";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -9,6 +9,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div className="container">
     <Navbar />
-    <App />
+    <Home />
   </ div>
 );
