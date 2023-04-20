@@ -1,0 +1,117 @@
+:root {
+    --primary-light: #8abdff;
+    --primary: #6d5dfc;
+    --primary-dark: #5b0eeb;
+
+    --white: #FFFFFF;
+    --greyLight-1: #E4EBF5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #9baacf;
+    --greyDark-2: #737d97;
+}
+
+$shadow: .3rem .3rem .6rem var(--greyLight-2),
+    -.2rem -.2rem .5rem var(--white);
+$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
+    inset -.2rem -.2rem .5rem var(--white);
+
+
+.components {
+    width: 75rem;
+    height: fit-content;
+    border-radius: 3rem;
+    box-shadow: .8rem .8rem 1.4rem var(--greyLight-2),
+        -.2rem -.2rem 1.8rem var(--white);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 17.6rem 19rem 20.4rem;
+    grid-template-rows: repeat(autofit, min-content);
+    grid-column-gap: 5rem;
+    grid-row-gap: 2.5rem;
+    align-items: center;
+}
+
+/*  CARD  */
+
+.card {
+    justify-self: center;
+    width: 20rem;
+    height: 20rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: $shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    // width: 10rem;
+    // height: 3rem;
+    // border-radius: 10rem;
+    // margin-left: 1rem;
+    // box-shadow: $shadow;
+    // justify-self: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    user-select: none;
+    cursor: pointer;
+    transition: .3s ease;
+
+    &__primary {
+        background: var(--primary);
+        box-shadow: inset .2rem .2rem 1rem var(--primary-light),
+            inset -.2rem -.2rem 1rem var(--primary-dark),
+            $shadow;
+        color: var(--greyLight-1);
+
+        &:hover {
+            color: var(--white);
+        }
+
+        &:active {
+            box-shadow: inset .2rem .2rem 1rem var(--primary-dark),
+                inset -.2rem -.2rem 1rem var(--primary-light);
+        }
+    }
+
+    &__secondary {
+        color: var(--greyDark);
+
+        &:hover {
+            color: var(--primary);
+        }
+
+        &:active {
+            box-shadow: $inner-shadow;
+        }
+    }
+
+    h2 {
+        width: 100%;
+        font-size: 1.8rem;
+        // color: var(--primary);
+    }
+
+    p {
+        // font-size: 1.3rem;
+        text-align: justify;
+        font-size: 1rem;
+        // color: var(--greyDark-2);
+    }
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+
+.card:hover {
+    color: #ff5c67;
+    background-color: #404040;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .card:active {
+    color: #ff0000;
+    box-shadow: none;
+    transform: translateY(0);
+  }

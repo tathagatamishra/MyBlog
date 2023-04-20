@@ -15,33 +15,6 @@ $shadow: .3rem .3rem .6rem var(--greyLight-2),
 $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
     inset -.2rem -.2rem .5rem var(--white);
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-html {
-    box-sizing: border-box;
-    font-size: 62.5%; // 1rem = 10px    100% = 16px
-    overflow-y: scroll;
-    background: var(--greyLight-1);
-
-    @media screen and (min-width: 900px) {
-        font-size: 75%;
-    }
-}
-
-.container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    background: var(--greyLight-1);
-}
 
 .navbar {
     width: 75rem;
@@ -51,12 +24,6 @@ html {
         -.2rem -.2rem 1.8rem var(--white);
     padding: 1rem;
     margin-bottom: 3rem;
-    // display: grid;
-    // grid-template-columns: 17.6rem 19rem 20.4rem;
-    // grid-template-rows: repeat(autofit, min-content);
-    // grid-column-gap: 5rem;
-    // grid-row-gap: 2.5rem;
-    // align-items: center;
     display: flex;
     justify-content: space-between;
 }
@@ -69,8 +36,6 @@ html {
 }
 
 .search {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
     position: relative;
     display: flex;
     align-items: center;
@@ -128,8 +93,6 @@ html {
     transition: .3s ease;
 
     &__primary {
-        grid-column: 1 / 2;
-        grid-row: 4 / 5;
         background: var(--primary);
         box-shadow: inset .2rem .2rem 1rem var(--primary-light),
             inset -.2rem -.2rem 1rem var(--primary-dark),
@@ -147,8 +110,6 @@ html {
     }
 
     &__secondary {
-        grid-column: 1 / 2;
-        grid-row: 5 / 6;
         color: var(--greyDark);
 
         &:hover {
@@ -168,8 +129,6 @@ html {
 
 /*  ICONS  */
 .icon {
-    grid-column: 3 / 4;
-    grid-row: 4 / 5;
     display: flex;
     justify-content: space-between;
 

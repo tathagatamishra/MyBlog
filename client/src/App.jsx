@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./index.scss";
+import "./app.scss";
 
 export default function App() {
   const [data, setData] = useState(null);
@@ -19,8 +19,7 @@ export default function App() {
       <div className="components">
         {data.map((e, i) => {
           return (
-            <div key={i} className="chip">
-              {/* <div class="chip__icon"></div> */}
+            <div key={i} className="card card__secondary">
               <h2>{e.title}</h2>
               <p>{e.content}</p>
             </div>

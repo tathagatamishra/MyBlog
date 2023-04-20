@@ -4,10 +4,17 @@ import { IonIcon } from "@ionic/react";
 import { search, home, person } from "ionicons/icons";
 
 export default function Navbar() {
+
+  function searchBlog() {
+    let searchKey = document.querySelector('.search__input').value
+    console.log(searchKey);
+    
+  }
+
   return (
     <div className="navbar">
-      <div class="icon">
-        <div class="icon__home">
+      <div className="icon">
+        <div className="icon__home">
           <IonIcon icon={home} />
         </div>
       </div>
@@ -23,13 +30,13 @@ export default function Navbar() {
             <IonIcon icon={search} />
           </div>
         </div>
-        <div class="btn btn__primary">
+        <div className="btn btn__primary" onClick={searchBlog}>
           <p>SEARCH</p>
         </div>
       </div>
 
-      <div class="icon">
-        <div class="icon__account">
+      <div className="icon">
+        <div className="icon__account">
           <IonIcon icon={person} />
         </div>
       </div>
