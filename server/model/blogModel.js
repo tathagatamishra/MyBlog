@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 
 module.exports = mongoose.model(
-  "user",
+  "blog",
 
   new mongoose.Schema(
     {
-      name: String,
-      email: String,
-      password: String,
-      blog: [String]
+      title: String,
+      content: String,
+      createdby: String,
+      userid: String
     },
     { timestamps: true }
   )

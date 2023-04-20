@@ -1,10 +1,25 @@
+const blogModel = require("../model/blogModel");
 const userModel = require("../model/userModel");
 
-exports.signup = async (req, res) => {
+exports.create = async (req, res) => {
   try {
     const data = req.body;
 
-    let createdData = await userModel.create(data);
+    let createdData = await blogModel.create(data);
+
+    if (createdData) {
+      let userData = await userModel.findById(data.userid);
+
+      let blog = userData.blog;
+
+      blog.push(createdData._id);
+
+      await userModel.findOneAndUpdate(
+        { _id: data.userid },
+        { $set: { blog } },
+        { new: true }
+      );
+    }
 
     return res.status(201).send({
       status: true,
@@ -20,19 +35,33 @@ exports.signup = async (req, res) => {
   }
 };
 
-exports.login = async (req, res) => {
+exports.read = async (req, res) => {
   try {
-    const data = req.body;
+    const id = req.params.id;
 
-    if (await userModel.find(data)) {
-      return res
-        .status(200)
-        .send({ status: true, message: "Your logged in successfully 😃" });
-    }
+    let blog = await blogModel.findById(id);
 
-    return res
-      .status(400)
-      .send({ status: false, message: "Incorrect credentials" });
+    res.status(200).send({
+      status: true,
+      data: blog,
+    });
+  } catch (err) {
+    return res.status(500).send({
+      status: false,
+      message: "Internal Server Error!",
+      error: err.message,
+    });
+  }
+};
+exports.all = async (req, res) => {
+  try {
+
+    let blog = await blogModel.find();
+
+    res.status(200).send({
+      status: true,
+      data: blog,
+    });
   } catch (err) {
     return res.status(500).send({
       status: false,
@@ -42,35 +71,17 @@ exports.login = async (req, res) => {
   }
 };
 
-exports.profile = async (req, res) => {
-  try {
-    const id = req.params.id;
-
-    let userData = await userModel.findById(id);
-
-    res.status(200).send({
-      status: true,
-      data: userData,
-    });
-  } catch (err) {
-    res.status(500).send({
-      status: false,
-      message: "Internal Server Error!",
-      error: err.message,
-    });
-  }
-};
-exports.edit = async (req, res) => {
+exports.update = async (req, res) => {
   try {
     const id = req.params.id;
 
     const data = req.body;
 
-    let { name, email, password } = data;
+    let { title, content } = data;
 
     let updatedData = await userModel.findOneAndUpdate(
       { _id: id },
-      { $set: { name, email, password } },
+      { $set: { title, content } },
       { new: true }
     );
 
