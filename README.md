@@ -1,15 +1,14 @@
 <h1 align="center"> Bloggity Blog </h1>
 <img align="right" src="https://media.giphy.com/media/PsdlJAuma89PLKNo18/giphy.gif" width="250">
-
 <h2 align="left">
 <img align="left" src="https://media.giphy.com/media/m9nax2NXWEHOwbNGjh/giphy.gif" width="150"> <br>
 🚧 under construction 🚧 </h2>
 <h4 align="left"> 
-started on April 19 2023
-<br>
 This is a full stack project of a blogging webpage
-</h4>
 <br>
+started on April 19 2023
+</h4>
+<br><br>
 <p align="left">
 <img src="https://user-images.githubusercontent.com/114053180/223065824-02021921-0562-4936-a1e9-6db07116d7d2.gif"  height="0.5" width="500">
 </p>
