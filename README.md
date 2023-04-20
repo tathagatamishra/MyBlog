@@ -1,5 +1,5 @@
 <h1 align="center"> Bloggity Blog </h1>
-<img align="right" src="https://media.giphy.com/media/PsdlJAuma89PLKNo18/giphy.gif" width="300">
+<img align="right" src="https://media.giphy.com/media/PsdlJAuma89PLKNo18/giphy.gif" width="250">
 
 <h2 align="left">
 <img align="left" src="https://media.giphy.com/media/m9nax2NXWEHOwbNGjh/giphy.gif" width="150"> <br>
