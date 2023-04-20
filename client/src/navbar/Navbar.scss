@@ -43,7 +43,8 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
     &__input {
         width: 20.4rem;
         height: 3rem;
-        border-radius: 10rem;
+        border-top-left-radius: 10rem;
+        border-bottom-left-radius: 10rem;
         border: none;
         font-size: 1.4rem;
         padding-left: 3.8rem;
@@ -79,10 +80,12 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
 
 /*  BUTTONS  */
 .btn {
+    z-index: 1;
     width: 10rem;
     height: 3rem;
-    border-radius: 10rem;
-    margin-left: 1rem;
+    border-top-right-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    // margin-left: 1rem;
     box-shadow: $shadow;
     justify-self: center;
     display: flex;
