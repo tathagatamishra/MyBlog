@@ -16,7 +16,7 @@ started on April 19 2023
   Frontend Deployed on Netlify &#160; <img src="https://media.giphy.com/media/FbUuPsOW3oOCdAHexF/giphy.gif" width="50"> &#160; https://b-l-o-g.netlify.app/
 </h3>
 <h3 align="left">
-  Backend Deployed on Netlify &#160; <img src="https://media.giphy.com/media/FbUuPsOW3oOCdAHexF/giphy.gif" width="50"> &#160; https://blogity-blog.vercel.app/
+  Backend Deployed on Vercel &#160; <img src="https://media.giphy.com/media/FbUuPsOW3oOCdAHexF/giphy.gif" width="50"> &#160; https://blogity-blog.vercel.app/
 </h3>
 <p align="left">
 <img src="https://user-images.githubusercontent.com/114053180/223065824-02021921-0562-4936-a1e9-6db07116d7d2.gif"  height="0.5" width="500">
@@ -24,7 +24,7 @@ started on April 19 2023
 
 ## TECHNOLOGY
 
-1. Created using `HTML`, `SCSS`, `JAVASCRIPT`, `NODE.JS`, `REACT`, `VITE`, `EXPRESS`, `MONGODB`
+ Created using `HTML`, `SCSS`, `JAVASCRIPT`, `NODE.JS`, `REACT`, `VITE`, `EXPRESS`, `MONGODB`
 
 ---
 
