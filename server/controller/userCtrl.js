@@ -4,6 +4,14 @@ exports.signup = async (req, res) => {
   try {
     const data = req.body;
 
+    let exData = await userModel.findOne({ email: data.email });
+    if (exData) {
+      return res.status(200).send({
+        status: false,
+        message: "This email is already in use !"
+      });
+    }
+
     let createdData = await userModel.create(data);
 
     return res.status(201).send({
@@ -24,14 +32,16 @@ exports.login = async (req, res) => {
   try {
     const data = req.body;
 
-    if (await userModel.find(data)) {
+    const { email, password } = data;
+
+    if (await userModel.findOne({ email, password })) {
       return res
         .status(200)
         .send({ status: true, message: "Your logged in successfully 😃" });
     }
 
     return res
-      .status(400)
+      .status(200)
       .send({ status: false, message: "Incorrect credentials" });
   } catch (err) {
     return res.status(500).send({

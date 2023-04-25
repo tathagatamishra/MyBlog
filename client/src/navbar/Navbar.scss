@@ -52,6 +52,7 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
         background: none;
         font-family: inherit;
         color: var(--greyDark);
+        margin-top: 0;
 
         &::placeholder {
             color: var(--greyLight-3);

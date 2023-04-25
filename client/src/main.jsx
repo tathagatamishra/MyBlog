@@ -1,14 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Home from "./homepage/Home.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import "./main.scss";
+
 import Navbar from "./navbar/Navbar";
+import Home from "./homepage/Home.jsx";
+import Blog from "./blog/Blog.jsx";
+import Credential from "./credential/Credential.jsx";
+import Profile from "./profile/Profile.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <div className="container">
-    <Navbar />
-    <Home />
-  </ div>
+    <BrowserRouter>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/credential" element={<Credential />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/account" element={<Credential />} />
+        <Route path="/blog" element={<Blog />} />
+      </Routes>
+    </BrowserRouter>
+  </div>
 );

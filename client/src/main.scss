@@ -29,15 +29,26 @@ html {
   font-size: 62.5%; // 1rem = 10px    100% = 16px
   overflow-y: scroll;
   background: var(--greyLight-1);
+  // overflow-x: scroll;
 
   @media screen and (min-width: 900px) {
     font-size: 75%;
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
   }
 }
 
 .container {
   min-height: 100vh;
-  padding-top: 1rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -45,4 +56,3 @@ html {
   font-family: 'Poppins', sans-serif;
   background: var(--greyLight-1);
 }
-

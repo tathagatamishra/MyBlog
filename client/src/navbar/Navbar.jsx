@@ -1,18 +1,20 @@
 import React from "react";
 import "./Navbar.scss";
+import { NavLink } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
 import { search, home, person } from "ionicons/icons";
 
 export default function Navbar() {
-
   function searchBlog() {
-    let searchKey = document.querySelector('.search__input').value
+    let searchKey = document.querySelector(".search__input").value;
     console.log(searchKey);
   }
 
   function profileClick() {
     const fetchData = async () => {
-      const response = await fetch("https://blogity-blog.vercel.app/profile/64401a8cc494c7aeb0ebbe97");
+      const response = await fetch(
+        "https://blogity-blog.vercel.app/profile/64401a8cc494c7aeb0ebbe97"
+      );
       const jsonData = await response.json();
       console.log(jsonData.data);
     };
@@ -20,12 +22,21 @@ export default function Navbar() {
     fetchData();
   }
 
+  function homeOnClick() {
+    document.querySelector("title").innerHTML = "All Blogs";
+  }
+  function profileOnClick() {
+    document.querySelector("title").innerHTML = "Profile";
+  }
+
   return (
     <div className="navbar">
       <div className="icon">
-        <div className="icon__home">
-          <IonIcon icon={home} />
-        </div>
+        <NavLink to="/" onClick={homeOnClick}>
+          <div className="icon__home">
+            <IonIcon icon={home} />
+          </div>
+        </NavLink>
       </div>
 
       <div className="s">
@@ -33,7 +44,7 @@ export default function Navbar() {
           <input
             type="text"
             className="search__input"
-            placeholder="Search..."
+            placeholder="under construction"
           />
           <div className="search__icon">
             <IonIcon icon={search} />
@@ -44,11 +55,13 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="icon" onClick={profileClick}>
-        <div className="icon__account">
-          <IonIcon icon={person} />
+      <NavLink to="/credential" onClick={profileOnClick}>
+        <div className="icon" onClick={profileClick}>
+          <div className="icon__account">
+            <IonIcon icon={person} />
+          </div>
         </div>
-      </div>
+      </NavLink>
     </div>
   );
 }
