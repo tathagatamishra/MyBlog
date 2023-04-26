@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;500&family=Lexend&family=Sen:wght@700&family=Staatliches&family=Viga&display=swap');
+
+
+.blogComponent {
+    width: 75rem;
+    height: fit-content;
+    border-radius: 3rem;
+    box-shadow: .8rem .8rem 1.4rem var(--greyLight-2),
+        -.2rem -.2rem 1.8rem var(--white);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.blogTitle {
+    margin-bottom: 4rem;
+    font-size: 3.6rem;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    // font-family: 'Lexend', sans-serif;
+    // font-family: 'Sen', sans-serif;
+    // font-family: 'Viga', sans-serif;
+    // font-family: 'Secular One', sans-serif;
+    // font-family: 'Staatliches', cursive;
+    // letter-spacing: 3px;
+    // word-spacing: 1rem;
+    color: #575e6f;
+}
+
+.blogContent {
+    color: #626b80;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: justify;
+}
+
+img {
+    width: 30rem;
+}

@@ -20,13 +20,16 @@ export default function Home() {
   if (data) {
     return (
       <div className="components">
-        <div className="addCard addCard__secondary">
-          <IonIcon icon={add} />
-        </div>
+        <NavLink to="/create-blog" style={{ textDecoration: "none" }}>
+          <div className="addCard addCard__secondary">
+            <IonIcon icon={add} />
+          </div>
+        </NavLink>
+
         {data.map((e, i) => {
           return (
-            <NavLink to="/blog" style={{ textDecoration: "none" }}>
-              <div key={i} className="card card__secondary">
+            <NavLink key={i} to="/blog" style={{ textDecoration: "none" }}>
+              <div  className="card card__secondary">
                 <h2>{e.title}</h2>
                 <p>{e.content}</p>
               </div>

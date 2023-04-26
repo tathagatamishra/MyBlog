@@ -5,10 +5,12 @@ exports.create = async (req, res) => {
   try {
     const data = req.body;
 
-    let createdData = await blogModel.create(data);
+    let userData = await userModel.findById(data.userid);
+    
+    if (userData) {
+      data.createdby = userData.name
 
-    if (createdData) {
-      let userData = await userModel.findById(data.userid);
+      let createdData = await blogModel.create(data);
 
       let blog = userData.blog;
 

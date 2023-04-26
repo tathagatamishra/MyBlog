@@ -9,6 +9,7 @@ import Home from "./homepage/Home.jsx";
 import Blog from "./blog/Blog.jsx";
 import Credential from "./credential/Credential.jsx";
 import Profile from "./profile/Profile.jsx";
+import CreateBlog from "./blog/CreateBlog";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -23,6 +24,7 @@ root.render(
         <Route path="/profile" element={<Profile />} />
         <Route path="/account" element={<Credential />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/create-blog" element={<CreateBlog />} />
       </Routes>
     </BrowserRouter>
   </div>
