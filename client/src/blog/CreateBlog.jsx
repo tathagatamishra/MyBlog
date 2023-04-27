@@ -9,7 +9,7 @@ export default function CreateBlog() {
   // const BASE_URL = "http://localhost:4000";
     const BASE_URL = "https://blogity-blog.vercel.app";
 
-  function addPendingTask(event) {
+  function addBlog(event) {
     event.preventDefault();
 
     let newBlog = {
@@ -18,15 +18,16 @@ export default function CreateBlog() {
       userid: "64401a8cc494c7aeb0ebbe97",
     };
 
-    axios
-      .post(`${BASE_URL}/create`, newBlog)
-      .then((res) => {
-        console.log(res.data);
-        // event.target.reset();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    console.log(window);
+    // axios
+    //   .post(`${BASE_URL}/create`, newBlog)
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     // event.target.reset();
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   }
 
   return (
@@ -34,7 +35,7 @@ export default function CreateBlog() {
       <h1 className="createTitle">Create Your Blog Here</h1>
 
       <div className="addTask addTask__secondary">
-        <form method="post" onSubmit={addPendingTask}>
+        <form method="post" onSubmit={addBlog}>
           <div>
             <textarea
               rows="2"

@@ -24,7 +24,7 @@ export default function Profile() {
       });
 
     axios
-      .get(`${BASE_URL}/all`)
+      .get(`${BASE_URL}/myblogs/64401a8cc494c7aeb0ebbe97`)
       .then((res) => {
         setBlogData(res.data.data);
       })

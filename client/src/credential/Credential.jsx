@@ -27,18 +27,28 @@ export default function Credential() {
     userSelect: "none",
   });
 
-  const BASE_URL = "http://localhost:4000";
-  // const BASE_URL = "https://what-to-do-bro.vercel.app";
+  // const BASE_URL = "http://localhost:4000";
+  const BASE_URL = "https://what-to-do-bro.vercel.app";
 
   function showOnClick(show) {
     if (show == 1) {
       document.querySelector("title").innerHTML = "Log in";
       setShowSign(false);
       setShowLog(true);
+      setWarning({
+        marginTop: "10px",
+        display: "none",
+        userSelect: "none",
+      });
     } else {
       document.querySelector("title").innerHTML = "Sign up";
       setShowLog(false);
       setShowSign(true);
+      setWarning({
+        marginTop: "10px",
+        display: "none",
+        userSelect: "none",
+      });
     }
   }
 
@@ -89,6 +99,19 @@ export default function Credential() {
       .post(`${BASE_URL}/signup`, credential)
       .then((res) => {
         console.log(res.data);
+        if (res.data.status) {
+          setWarning({
+            marginTop: "10px",
+            display: "none",
+            userSelect: "none",
+          });
+        } else {
+          setWarning({
+            marginTop: "10px",
+            userSelect: "none",
+            color: "red",
+          });
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -173,6 +196,7 @@ export default function Credential() {
             <input className="normalInput" type="text" required />
             <label htmlFor="">Email</label>
             <input className="normalInput" type="email" required />
+            <p style={warning}>⦿ This email already in use</p>
             <label htmlFor="">Password</label>
 
             <div className="password__eye">

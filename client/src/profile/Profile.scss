@@ -11,6 +11,10 @@
 //     --greyDark-2: #737d97;
 // }
 
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;500&family=Lexend&family=Sen:wght@700&family=Staatliches&family=Viga&display=swap');
+
+
 $shadow: .3rem .3rem .6rem var(--greyLight-2),
     -.2rem -.2rem .5rem var(--white);
 $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
@@ -26,6 +30,7 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
         -.2rem -.2rem 1.8rem var(--white);
     padding: 4rem;
     padding-bottom: 0;
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +43,7 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
     height: fit-content;
     width: 15rem;
     padding: 1rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     font-size: 1.8rem;
     // align-self: flex-start;
     display: flex;
@@ -76,19 +81,25 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
 
     &__secondary {
         color: var(--greyDark);
+        font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Lexend', sans-serif;
+    // font-family: 'Sen', sans-serif;
+    // font-family: 'Viga', sans-serif;
+    // font-family: 'Secular One', sans-serif;
+    // font-family: 'Staatliches', cursive;
 
         & h2 {
             font-size: 1.5rem;
             margin: 1rem;
             margin-left: 0;
             color: var(--greyDark-2);
-
+            
             & b {
                 font-size: 2rem;
                 color: #9286fd;
                 margin-right: 3rem;
             }
-
+            
             &:hover {
                 color: #9286fd;
                 transform: translateX(-3px);
@@ -96,9 +107,10 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
 
             transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
         }
-
+        
         & h3 {
             margin: 1rem;
+            margin-top: 0;
             margin-left: 0;
             font-size: 1.5rem;
             color: var(--greyDark-2);

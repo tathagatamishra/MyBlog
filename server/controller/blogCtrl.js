@@ -55,10 +55,30 @@ exports.read = async (req, res) => {
     });
   }
 };
+
 exports.all = async (req, res) => {
   try {
 
     let blog = await blogModel.find();
+
+    res.status(200).send({
+      status: true,
+      data: blog,
+    });
+  } catch (err) {
+    return res.status(500).send({
+      status: false,
+      message: "Internal Server Error!",
+      error: err.message,
+    });
+  }
+};
+
+exports.myBlogs = async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    let blog = await blogModel.find({userid: id});
 
     res.status(200).send({
       status: true,

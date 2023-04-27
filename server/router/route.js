@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const { signup, login, profile } = require("../controller/userCtrl");
-const { create, all, read, update } = require("../controller/blogCtrl");
+const { create, all, read, update, myBlogs } = require("../controller/blogCtrl");
 
 router.get("/test", (req, res) => {
   let data = "😍";
@@ -17,6 +17,7 @@ router.get("/edit/:id", profile);
 router.post("/create", create);
 router.get("/all", all);
 router.get("/read/:id", read);
+router.get("/myblogs/:id", myBlogs);
 router.get("/update/:id", update);
 
 

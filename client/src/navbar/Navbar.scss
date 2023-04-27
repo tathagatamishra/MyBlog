@@ -161,3 +161,34 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
         }
     }
 }
+
+
+.login {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 1.5rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: fit-content;
+    height: 3rem;
+    border-radius: 50px;
+    box-shadow: $shadow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .7rem;
+    cursor: pointer;
+    color: var(--greyDark);
+    transition: all .5s ease;
+
+    &:active {
+        box-shadow: $inner-shadow;
+        color: var(--primary);
+    }
+
+    &:hover {
+        color: var(--primary);
+    }
+
+}

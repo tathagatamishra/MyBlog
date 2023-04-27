@@ -55,6 +55,13 @@ export default function Navbar() {
         </div>
       </div>
 
+      <NavLink style={{textDecoration:"none"}} to="/account" onClick={profileOnClick}>
+        <div className="login" onClick={profileClick}>
+          <h1>
+            LogIn/SignUp
+          </h1>
+        </div>
+      </NavLink>
       <NavLink to="/profile" onClick={profileOnClick}>
         <div className="icon" onClick={profileClick}>
           <div className="icon__account">
