@@ -11,7 +11,7 @@ export default function Profile() {
   const [blogData, setBlogData] = useState(null);
 
   // const BASE_URL = "http://localhost:4000";
-  const BASE_URL = "https://what-to-do-bro.vercel.app"
+  const BASE_URL = "https://blogity-blog.vercel.app"
 
   useEffect(() => {
     axios
