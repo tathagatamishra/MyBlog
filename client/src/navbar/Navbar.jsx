@@ -55,7 +55,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <NavLink to="/credential" onClick={profileOnClick}>
+      <NavLink to="/profile" onClick={profileOnClick}>
         <div className="icon" onClick={profileClick}>
           <div className="icon__account">
             <IonIcon icon={person} />

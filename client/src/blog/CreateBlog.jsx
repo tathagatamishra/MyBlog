@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./CreateBlog.scss";
-import axios from "axios"
+import axios from "axios";
 
 export default function CreateBlog() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  // const BASE_URL = "http://localhost:5000"
-  const BASE_URL = "https://blogity-blog.vercel.app";
+  const BASE_URL = "http://localhost:4000";
+  //   const BASE_URL = "https://blogity-blog.vercel.app";
 
   function addPendingTask(event) {
     event.preventDefault();
@@ -25,7 +25,6 @@ export default function CreateBlog() {
         // event.target.reset();
       })
       .catch((err) => {
-        alert(err.message);
         console.log(err);
       });
   }
@@ -57,8 +56,16 @@ export default function CreateBlog() {
           <button type="submit">+</button>
         </form>
       </div>
-
-      <p className="createContent"></p>
+      
+      <div className="createComponent">
+        <h2 className="preview">Preview</h2>
+        <h1 className="blogTitle">
+          {title}
+        </h1>
+        <p className="blogContent">
+          {content}
+        </p>
+      </div>
     </div>
   );
 }

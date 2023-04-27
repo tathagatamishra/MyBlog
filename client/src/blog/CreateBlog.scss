@@ -30,6 +30,7 @@ $ultimate-shadow: .8rem .8rem 1.4rem var(--greyLight-2),
     box-shadow: .8rem .8rem 1.4rem var(--greyLight-2),
         -.2rem -.2rem 1.8rem var(--white);
     padding: 4rem;
+    padding-bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -58,7 +59,7 @@ $ultimate-shadow: .8rem .8rem 1.4rem var(--greyLight-2),
 
 .addTask {
     justify-self: center;
-    width: 50rem;
+    width: 65rem;
     height: fit-content;
     min-height: 3.5rem;
     border: solid;
@@ -87,7 +88,7 @@ $ultimate-shadow: .8rem .8rem 1.4rem var(--greyLight-2),
             border-radius: 10px;
 
             & div {
-                width: 80%;
+                width: 85%;
                 display: flex;
                 flex-direction: column;
                 flex-wrap: nowrap;
@@ -106,23 +107,24 @@ $ultimate-shadow: .8rem .8rem 1.4rem var(--greyLight-2),
                     background: var(--greyLight-1);
                     border: none;
                     border-bottom: var(--greyLight-2) 1px solid;
-                    
+                    // border-radius: 20px;
+
                     /* width */
                     &::-webkit-scrollbar {
                         width: 5px;
                     }
-                    
+
                     /* Handle */
                     &::-webkit-scrollbar-thumb {
                         background: var(--primary-light);
                     }
-                    
+
                     &:focus {
                         outline: none;
                         // background: #ffffff;
                     }
                 }
-                
+
                 & .inputs2 {
                     width: 100%;
                     height: 200px;
@@ -151,7 +153,7 @@ $ultimate-shadow: .8rem .8rem 1.4rem var(--greyLight-2),
 
             & button {
                 padding: 1px;
-                width: 21%;
+                width: 15%;
                 // height: 9.7rem;
                 min-height: 250px;
                 border: none;
@@ -172,7 +174,7 @@ $ultimate-shadow: .8rem .8rem 1.4rem var(--greyLight-2),
                 &:active {
                     color: var(--primary);
                     transform: translateY(.5px);
-                    // box-shadow: $inner-shadow;
+                    box-shadow: $inner-shadow;
                 }
             }
 
@@ -193,4 +195,35 @@ $ultimate-shadow: .8rem .8rem 1.4rem var(--greyLight-2),
     }
 
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+.createComponent {
+    width: 75rem;
+    height: fit-content;
+    border-radius: 3rem;
+    box-shadow: .8rem .8rem 1.4rem var(--greyLight-2),
+        -.2rem -.2rem 1.8rem var(--white);
+    padding: 4rem;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.preview {
+    box-shadow: $inner-shadow;
+    height: fit-content;
+    width: 15rem;
+    padding: 1rem;
+    margin-bottom: 5rem;
+    font-size: 1.8rem;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    letter-spacing: 3px;
+    color: var(--greyDark);
 }
