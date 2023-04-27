@@ -6,8 +6,8 @@ export default function CreateBlog() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  const BASE_URL = "http://localhost:4000";
-  //   const BASE_URL = "https://blogity-blog.vercel.app";
+  // const BASE_URL = "http://localhost:4000";
+    const BASE_URL = "https://blogity-blog.vercel.app";
 
   function addPendingTask(event) {
     event.preventDefault();
