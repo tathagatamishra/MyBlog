@@ -56,9 +56,6 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
 }
 
 
-/*  CARD  */
-
-
 .profile {
     justify-self: center;
     width: 100%;
@@ -82,24 +79,24 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
     &__secondary {
         color: var(--greyDark);
         font-family: 'Alegreya Sans SC', sans-serif;
-    font-family: 'Lexend', sans-serif;
-    // font-family: 'Sen', sans-serif;
-    // font-family: 'Viga', sans-serif;
-    // font-family: 'Secular One', sans-serif;
-    // font-family: 'Staatliches', cursive;
+        font-family: 'Lexend', sans-serif;
+        // font-family: 'Sen', sans-serif;
+        // font-family: 'Viga', sans-serif;
+        // font-family: 'Secular One', sans-serif;
+        // font-family: 'Staatliches', cursive;
 
         & h2 {
             font-size: 1.5rem;
             margin: 1rem;
             margin-left: 0;
             color: var(--greyDark-2);
-            
+
             & b {
                 font-size: 2rem;
                 color: #9286fd;
                 margin-right: 3rem;
             }
-            
+
             &:hover {
                 color: #9286fd;
                 transform: translateX(-3px);
@@ -107,7 +104,7 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
 
             transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
         }
-        
+
         & h3 {
             margin: 1rem;
             margin-top: 0;
@@ -132,6 +129,9 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
 }
 
 
+
+/*  CARD  */
+
 .myBlog {
     width: 75rem;
     height: fit-content;
@@ -147,3 +147,143 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
     grid-row-gap: 3.5rem;
     align-items: center;
 }
+
+.addCard {
+    justify-self: center;
+    width: 20rem;
+    height: 22rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: $shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    transition: .3s ease;
+    font-size: 10rem;
+
+    &__secondary {
+        color: var(--greyLight-3);
+
+        &:hover {
+            transform: translateY(-2px);
+            color: var(--greyDark);
+        }
+
+        &:active {
+            box-shadow: $inner-shadow;
+            transform: translateY(0);
+            color: var(--primary);
+        }
+    }
+
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+.blogCard {
+
+    justify-self: center;
+    width: 20rem;
+    height: 22rem;
+    // padding: 1rem;
+    // padding-top: 0;
+    border-radius: 1rem;
+    box-shadow: $shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    transition: .3s ease;
+
+    &__secondary {
+        color: var(--greyDark);
+
+        & .cross {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            // position: absolute;
+            width: 100%;
+            height: 0;
+            margin-bottom: 1rem;
+            // border: solid 1px;
+        
+            & .crossButton {
+                width: 2.5rem;
+                height: 2.5rem;
+                background: #E4EBF5;
+                border-radius: 50%;
+                box-shadow: $shadow;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2rem;
+                cursor: pointer;
+                color: rgb(255, 155, 155);
+                transition: all .5s ease;
+        
+                &:hover {
+                    color: red;
+                }
+        
+                &:active {
+                    box-shadow: $inner-shadow;
+                    color: rgb(176, 0, 0);
+                }
+            }
+        
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        }
+
+        & .text {
+            // border: solid;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            & h2 {
+                width: 100%;
+                margin-bottom: 1rem;
+                font-size: 1.8rem;
+                color: var(--primary);
+            }
+    
+            & p {
+                font-size: 1.3rem;
+                text-align: justify;
+                font-size: 1rem;
+                color: var(--greyDark-2);
+            }
+        }
+
+
+        &:hover {
+            & h2 {
+                color: #9286fd;
+            }
+            & p {
+                color: #9baacf;
+            }
+            transform: translateY(-2px);
+        }
+
+        &:active {
+            & h2 {
+                color: #6557e3;
+            }
+            & p {
+                color: #78839e;
+            }
+            box-shadow: $inner-shadow;
+            transform: translateY(0);
+        }
+    }
+
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+

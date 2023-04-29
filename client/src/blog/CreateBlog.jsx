@@ -18,16 +18,15 @@ export default function CreateBlog() {
       userid: "64401a8cc494c7aeb0ebbe97",
     };
 
-    console.log(window);
-    // axios
-    //   .post(`${BASE_URL}/create`, newBlog)
-    //   .then((res) => {
-    //     console.log(res.data);
-    //     // event.target.reset();
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+    axios
+      .post(`${BASE_URL}/create`, newBlog)
+      .then((res) => {
+        console.log(res.data);
+        event.target.reset();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   return (

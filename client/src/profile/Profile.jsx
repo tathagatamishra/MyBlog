@@ -3,7 +3,7 @@ import "./Profile.scss";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
-import { add } from "ionicons/icons";
+import { add, close } from "ionicons/icons";
 
 export default function Profile() {
   const [data, setData] = useState(null);
@@ -11,7 +11,7 @@ export default function Profile() {
   const [blogData, setBlogData] = useState(null);
 
   // const BASE_URL = "http://localhost:4000";
-  const BASE_URL = "https://blogity-blog.vercel.app"
+  const BASE_URL = "https://blogity-blog.vercel.app";
 
   useEffect(() => {
     axios
@@ -33,6 +33,21 @@ export default function Profile() {
       });
   }, [data]);
 
+  function deleteBlog(key) {
+    let userid = "64401a8cc494c7aeb0ebbe97";
+
+    console.log(key);
+
+    axios
+      .delete(`${BASE_URL}/delete/${key}/${userid}`)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   if (data) {
     return (
       <div className="proComponent">
@@ -45,7 +60,7 @@ export default function Profile() {
             <b>Email</b> {data.email}
           </h3>
         </div>
-        
+
         {blogData && (
           <div className="myBlog">
             <NavLink to="/create-blog" style={{ textDecoration: "none" }}>
@@ -56,12 +71,20 @@ export default function Profile() {
 
             {blogData.map((e, i) => {
               return (
-                <NavLink key={i} to="/blog" style={{ textDecoration: "none" }}>
-                  <div className="card card__secondary">
-                    <h2>{e.title}</h2>
-                    <p>{e.content}</p>
+                <div key={i} className="blogCard blogCard__secondary">
+                  <div className="cross">
+                    <div className="crossButton" onClick={() => deleteBlog(i)}>
+                      <IonIcon icon={close} />
+                    </div>
                   </div>
-                </NavLink>
+
+                  <NavLink to="/blog" style={{ textDecoration: "none" }}>
+                    <div className="text">
+                      <h2>{e.title}</h2>
+                      <p>{e.content}</p>
+                    </div>
+                  </NavLink>
+                </div>
               );
             })}
           </div>

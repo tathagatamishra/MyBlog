@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.scss";
 import { NavLink } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
 import { search, home, person } from "ionicons/icons";
 
 export default function Navbar() {
+  // const [] = useState()
+
+
   function searchBlog() {
     let searchKey = document.querySelector(".search__input").value;
     console.log(searchKey);
@@ -62,6 +65,7 @@ export default function Navbar() {
           </h1>
         </div>
       </NavLink>
+
       <NavLink to="/profile" onClick={profileOnClick}>
         <div className="icon" onClick={profileClick}>
           <div className="icon__account">

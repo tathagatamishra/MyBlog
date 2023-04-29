@@ -67,6 +67,7 @@ export default function Credential() {
       .then((res) => {
         console.log(res.data);
         if (res.data.status) {
+          event.target.reset();
           setWarning({
             marginTop: "10px",
             display: "none",
@@ -100,6 +101,7 @@ export default function Credential() {
       .then((res) => {
         console.log(res.data);
         if (res.data.status) {
+          event.target.reset();
           setWarning({
             marginTop: "10px",
             display: "none",

@@ -6,9 +6,9 @@ exports.create = async (req, res) => {
     const data = req.body;
 
     let userData = await userModel.findById(data.userid);
-    
+
     if (userData) {
-      data.createdby = userData.name
+      data.createdby = userData.name;
 
       let createdData = await blogModel.create(data);
 
@@ -58,7 +58,6 @@ exports.read = async (req, res) => {
 
 exports.all = async (req, res) => {
   try {
-
     let blog = await blogModel.find();
 
     res.status(200).send({
@@ -78,7 +77,7 @@ exports.myBlogs = async (req, res) => {
   try {
     const id = req.params.id;
 
-    let blog = await blogModel.find({userid: id});
+    let blog = await blogModel.find({ userid: id });
 
     res.status(200).send({
       status: true,
@@ -110,6 +109,31 @@ exports.update = async (req, res) => {
     res.status(200).send({
       status: true,
       data: updatedData,
+    });
+  } catch (err) {
+    res.status(500).send({
+      status: false,
+      message: "Internal Server Error!",
+      error: err.message,
+    });
+  }
+};
+
+exports.remove = async (req, res) => {
+  try {
+    const paramData = req.params;
+
+    const { key, userid } = paramData;
+
+    let myBlog = await blogModel.find({ userid: userid });
+
+    let blogId = myBlog[key]._id;
+
+    await blogModel.deleteOne({ _id: blogId });
+
+    return res.status(200).send({
+      status: true,
+      message: "Deleted",
     });
   } catch (err) {
     res.status(500).send({
