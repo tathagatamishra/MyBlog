@@ -5,9 +5,12 @@ import { NavLink } from "react-router-dom";
 export default function Home() {
   const [data, setData] = useState(null);
 
+  // const BASE_URL = "http://localhost:4000";
+  const BASE_URL = "https://blogity-blog.vercel.app";
+
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("https://blogity-blog.vercel.app/all");
+      const response = await fetch(`${BASE_URL}/all`);
       const jsonData = await response.json();
       setData(jsonData.data);
     };

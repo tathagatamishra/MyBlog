@@ -103,10 +103,10 @@ export default function Profile() {
                     </div>
                   </div>
 
-                  <NavLink to="/blog" style={{ textDecoration: "none" }}>
+                  <NavLink to={`/blog/${e._id}`} style={{ textDecoration: "none" }}>
                     <div className="text">
                       <h2>{e.title}</h2>
-                      <p>{e.content}</p>
+                      <p>{e.content.slice(0, 200)} <b> . . . . .</b></p>
                     </div>
                   </NavLink>
                 </div>
