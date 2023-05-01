@@ -29,7 +29,7 @@ export default function Credential() {
   });
 
   // const BASE_URL = "http://localhost:4000";
-  const BASE_URL = "https://blogity-blog.vercel.app/all";
+  const BASE_URL = "https://blogity-blog.vercel.app";
 
   let navigate = useNavigate();
 
