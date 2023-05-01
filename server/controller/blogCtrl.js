@@ -21,13 +21,19 @@ exports.create = async (req, res) => {
         { $set: { blog } },
         { new: true }
       );
-    }
 
-    return res.status(201).send({
-      status: true,
-      message: "Your account created successfully 😃",
-      data: createdData,
-    });
+      return res.status(201).send({
+        status: true,
+        message: "Blog created successfully 😃",
+        data: createdData,
+      });
+    } else {
+      return res.status(200).send({
+        status: true,
+        message: "no user found",
+        data: createdData,
+      });
+    }
   } catch (err) {
     return res.status(500).send({
       status: false,

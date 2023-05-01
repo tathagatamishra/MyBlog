@@ -9,15 +9,16 @@ export default function CreateBlog() {
   // const BASE_URL = "http://localhost:4000";
     const BASE_URL = "https://blogity-blog.vercel.app";
 
+
   function addBlog(event) {
     event.preventDefault();
 
     let newBlog = {
       title: title,
       content: content,
-      userid: "64401a8cc494c7aeb0ebbe97",
+      userid: localStorage.getItem("user-id"),
     };
-
+    console.log("new blog",newBlog);
     axios
       .post(`${BASE_URL}/create`, newBlog)
       .then((res) => {

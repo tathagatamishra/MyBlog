@@ -50,35 +50,10 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    // width: 10rem;
-    // height: 3rem;
-    // border-radius: 10rem;
-    // margin-left: 1rem;
-    // box-shadow: $shadow;
-    // justify-self: center;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
     user-select: none;
     cursor: pointer;
     transition: .3s ease;
 
-    &__primary {
-        background: var(--primary);
-        box-shadow: inset .2rem .2rem 1rem var(--primary-light),
-            inset -.2rem -.2rem 1rem var(--primary-dark),
-            $shadow;
-        color: var(--greyLight-1);
-
-        &:hover {
-            color: var(--white);
-        }
-
-        &:active {
-            box-shadow: inset .2rem .2rem 1rem var(--primary-dark),
-                inset -.2rem -.2rem 1rem var(--primary-light);
-        }
-    }
 
     &__secondary {
         color: var(--greyDark);

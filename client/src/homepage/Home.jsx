@@ -20,10 +20,10 @@ export default function Home() {
       <div className="components">
         {data.map((e, i) => {
           return (
-            <NavLink key={i} to="/blog" style={{ textDecoration: "none" }}>
+            <NavLink key={i} to={`/blog/${e._id}`} style={{ textDecoration: "none" }}>
               <div className="card card__secondary">
                 <h2>{e.title}</h2>
-                <p>{e.content}</p>
+                <p>{e.content.slice(0, 200)} <b> . . . . .</b></p>
               </div>
             </NavLink>
           );

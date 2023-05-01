@@ -34,10 +34,12 @@ exports.login = async (req, res) => {
 
     const { email, password } = data;
 
-    if (await userModel.findOne({ email, password })) {
+    let userData = await userModel.findOne({ email, password })
+
+    if (userData) {
       return res
         .status(200)
-        .send({ status: true, message: "Your logged in successfully 😃" });
+        .send({ status: true, message: "Your logged in successfully 😃", data: userData._id });
     }
 
     return res

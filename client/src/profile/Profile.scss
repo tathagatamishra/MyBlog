@@ -1,15 +1,15 @@
-// :root {
-//     --primary-light: #8abdff;
-//     --primary: #6d5dfc;
-//     --primary-dark: #5b0eeb;
+:root {
+    --primary-light: #8abdff;
+    --primary: #6d5dfc;
+    --primary-dark: #5b0eeb;
 
-//     --white: #FFFFFF;
-//     --greyLight-1: #E4EBF5;
-//     --greyLight-2: #c8d0e7;
-//     --greyLight-3: #bec8e4;
-//     --greyDark: #9baacf;
-//     --greyDark-2: #737d97;
-// }
+    --white: #FFFFFF;
+    --greyLight-1: #E4EBF5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #9baacf;
+    --greyDark-2: #737d97;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;500&family=Lexend&family=Sen:wght@700&family=Staatliches&family=Viga&display=swap');
@@ -35,25 +35,70 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+
+    & .componentHeader {
+        // border: solid;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+        margin-bottom: 3rem;
+
+        & .proHeading {
+            box-shadow: $inner-shadow;
+            height: fit-content;
+            width: 15rem;
+            padding: 1rem;
+            font-size: 1.8rem;
+            // align-self: flex-start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            letter-spacing: 3px;
+            color: var(--greyDark);
+        }
+        & .empt {
+            width: 100%;
+        }
+        & .edit {
+
+            height: 100%;
+            width: fit-content;
+            font-size: 2.5rem;
+            color: #71a9f3;
+            margin-right: 1rem;
+
+            & :hover {
+                color: var(--primary);
+            }
+            & :active {
+                color: var(--primary-dark);
+            }
+
+        }
+        & .logOut {
+            padding-top: 1.6px;
+            height: 100%;
+            width: fit-content;
+            font-size: 2.5rem;
+            color: rgb(255, 133, 133);
+
+            & :hover {
+                color: rgb(255, 31, 31);
+            }
+            & :active {
+                color: rgb(201, 0, 0);
+            }
+
+        }
+    }
 }
 
 
-.proHeading {
-    box-shadow: $inner-shadow;
-    height: fit-content;
-    width: 15rem;
-    padding: 1rem;
-    margin-bottom: 3rem;
-    font-size: 1.8rem;
-    // align-self: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    letter-spacing: 3px;
-    color: var(--greyDark);
-}
 
 
 .profile {
@@ -63,68 +108,62 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
     min-height: 3.5rem;
     padding: 1rem;
     padding-bottom: 4rem;
-    // padding-left: 0;
     margin-bottom: 1rem;
-    // border-radius: 1rem;
-    // box-shadow: $shadow;
     border-bottom: solid 2px var(--greyLight-2);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
     user-select: none;
-    cursor: pointer;
     transition: .3s ease;
 
-    &__secondary {
-        color: var(--greyDark);
-        font-family: 'Alegreya Sans SC', sans-serif;
-        font-family: 'Lexend', sans-serif;
-        // font-family: 'Sen', sans-serif;
-        // font-family: 'Viga', sans-serif;
-        // font-family: 'Secular One', sans-serif;
-        // font-family: 'Staatliches', cursive;
+    color: var(--greyDark);
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Lexend', sans-serif;
+    // font-family: 'Sen', sans-serif;
+    // font-family: 'Viga', sans-serif;
+    // font-family: 'Secular One', sans-serif;
+    // font-family: 'Staatliches', cursive;
 
-        & h2 {
-            font-size: 1.5rem;
-            margin: 1rem;
-            margin-left: 0;
-            color: var(--greyDark-2);
+    & h2 {
+        font-size: 1.5rem;
+        margin: 1rem;
+        margin-left: 0;
+        color: var(--greyDark-2);
 
-            & b {
-                font-size: 2rem;
-                color: #9286fd;
-                margin-right: 3rem;
-            }
-
-            &:hover {
-                color: #9286fd;
-                transform: translateX(-3px);
-            }
-
-            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        & b {
+            font-size: 2rem;
+            color: #9286fd;
+            margin-right: 3rem;
         }
 
-        & h3 {
-            margin: 1rem;
-            margin-top: 0;
-            margin-left: 0;
-            font-size: 1.5rem;
-            color: var(--greyDark-2);
-
-            & b {
-                font-size: 2rem;
-                color: #9286fd;
-                margin-right: 3rem;
-            }
-
-            &:hover {
-                color: #9286fd;
-                transform: translateX(-3px);
-            }
-
-            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        &:hover {
+            color: #9286fd;
+            transform: translateX(-3px);
         }
+
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    }
+
+    & h3 {
+        margin: 1rem;
+        margin-top: 0;
+        margin-left: 0;
+        font-size: 1.5rem;
+        color: var(--greyDark-2);
+
+        & b {
+            font-size: 2rem;
+            color: #9286fd;
+            margin-right: 3rem;
+        }
+
+        &:hover {
+            color: #9286fd;
+            transform: translateX(-3px);
+        }
+
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
     }
 }
 
@@ -211,7 +250,7 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
             height: 0;
             margin-bottom: 1rem;
             // border: solid 1px;
-        
+
             & .crossButton {
                 width: 2.5rem;
                 height: 2.5rem;
@@ -225,17 +264,17 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
                 cursor: pointer;
                 color: rgb(255, 155, 155);
                 transition: all .5s ease;
-        
+
                 &:hover {
                     color: red;
                 }
-        
+
                 &:active {
                     box-shadow: $inner-shadow;
                     color: rgb(176, 0, 0);
                 }
             }
-        
+
             transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
         }
 
@@ -252,7 +291,7 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
                 font-size: 1.8rem;
                 color: var(--primary);
             }
-    
+
             & p {
                 font-size: 1.3rem;
                 text-align: justify;
@@ -266,9 +305,11 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
             & h2 {
                 color: #9286fd;
             }
+
             & p {
                 color: #9baacf;
             }
+
             transform: translateY(-2px);
         }
 
@@ -276,9 +317,11 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
             & h2 {
                 color: #6557e3;
             }
+
             & p {
                 color: #78839e;
             }
+
             box-shadow: $inner-shadow;
             transform: translateY(0);
         }
@@ -286,4 +329,3 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
 
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
 }
-

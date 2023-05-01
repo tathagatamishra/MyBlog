@@ -1,29 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { redirect } from "react-router-dom";
 import "./Navbar.scss";
+import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
 import { search, home, person } from "ionicons/icons";
 
 export default function Navbar() {
-  // const [] = useState()
-
+  const [id, setId] = useState(null);
 
   function searchBlog() {
     let searchKey = document.querySelector(".search__input").value;
     console.log(searchKey);
   }
 
-  function profileClick() {
-    const fetchData = async () => {
-      const response = await fetch(
-        "https://blogity-blog.vercel.app/profile/64401a8cc494c7aeb0ebbe97"
-      );
-      const jsonData = await response.json();
-      console.log(jsonData.data);
-    };
-
-    fetchData();
-  }
 
   function homeOnClick() {
     document.querySelector("title").innerHTML = "All Blogs";
@@ -31,6 +21,10 @@ export default function Navbar() {
   function profileOnClick() {
     document.querySelector("title").innerHTML = "Profile";
   }
+
+  setInterval(() => {
+    setId(localStorage.getItem("user-id"));
+  }, 1000);
 
   return (
     <div className="navbar">
@@ -58,21 +52,23 @@ export default function Navbar() {
         </div>
       </div>
 
-      <NavLink style={{textDecoration:"none"}} to="/account" onClick={profileOnClick}>
-        <div className="login" onClick={profileClick}>
-          <h1>
-            LogIn/SignUp
-          </h1>
-        </div>
-      </NavLink>
-
-      <NavLink to="/profile" onClick={profileOnClick}>
-        <div className="icon" onClick={profileClick}>
-          <div className="icon__account">
-            <IonIcon icon={person} />
+      {id == null ? (
+        <NavLink to="login" onClick={profileOnClick}>
+          <div className="icon">
+            <div className="icon__account">
+              <IonIcon icon={person} />
+            </div>
           </div>
-        </div>
-      </NavLink>
+        </NavLink>
+      ) : (
+        <NavLink to={`/profile`} onClick={profileOnClick}>
+          <div className="icon">
+            <div className="icon__account">
+              <IonIcon icon={person} />
+            </div>
+          </div>
+        </NavLink>
+      )}
     </div>
   );
 }

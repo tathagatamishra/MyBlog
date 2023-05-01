@@ -22,8 +22,8 @@ root.render(
         <Route path="/" element={<Home />} />
         <Route path="/credential" element={<Credential />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/account" element={<Credential />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/login" element={<Credential />} />
+        <Route path="/blog/:id" element={<Blog />} />
         <Route path="/create-blog" element={<CreateBlog />} />
       </Routes>
     </BrowserRouter>

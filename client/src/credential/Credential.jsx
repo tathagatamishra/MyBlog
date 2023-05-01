@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate  } from 'react-router-dom';
 import "./Credential.scss";
 import axios from "axios";
 import { IonIcon } from "@ionic/react";
@@ -28,7 +29,10 @@ export default function Credential() {
   });
 
   // const BASE_URL = "http://localhost:4000";
-  const BASE_URL = "https://what-to-do-bro.vercel.app";
+  const BASE_URL = "https://blogity-blog.vercel.app/all";
+
+  let navigate = useNavigate();
+
 
   function showOnClick(show) {
     if (show == 1) {
@@ -60,19 +64,21 @@ export default function Credential() {
       password: event.target[1].value,
     };
 
-    // console.log(credential);
-
     axios
       .post(`${BASE_URL}/login`, credential)
       .then((res) => {
         console.log(res.data);
         if (res.data.status) {
-          event.target.reset();
+          // event.target.reset();
           setWarning({
             marginTop: "10px",
             display: "none",
             userSelect: "none",
           });
+
+          localStorage.setItem('user-id', res.data.data)
+
+          navigate(`/profile`);
         } else {
           setWarning({
             marginTop: "10px",
@@ -107,6 +113,8 @@ export default function Credential() {
             display: "none",
             userSelect: "none",
           });
+          // after signUp opening logIn form by passing argument 1 in showOnClick
+          showOnClick(1)
         } else {
           setWarning({
             marginTop: "10px",
