@@ -28,6 +28,9 @@ started on April 19 2023
 
 ---
 
-![screencapture-b-l-o-g-netlify-app](https://user-images.githubusercontent.com/114053180/233452862-f6d580f6-a28b-4ea5-8880-b76e57437283.png)
+<img width="1280" alt="Screenshot 2023-05-02 001055" src="https://user-images.githubusercontent.com/114053180/235509718-cc83a70a-fb9b-417c-b58f-a01ae23919c5.png">
+<img width="1280" alt="Screenshot 2023-05-02 001238" src="https://user-images.githubusercontent.com/114053180/235509732-af7b216e-2d29-4a62-8817-74e60f74ca98.png">
+<img width="1280" alt="Screenshot 2023-05-02 001501" src="https://user-images.githubusercontent.com/114053180/235509749-35e8299d-1204-461a-b534-67f964d2a89c.png">
 
 ---
+
