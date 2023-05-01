@@ -10,21 +10,43 @@ started on April 19 2023
 </h4>
 <br><br>
 <p align="left">
-<img src="https://user-images.githubusercontent.com/114053180/223065824-02021921-0562-4936-a1e9-6db07116d7d2.gif"  height="0.5" width="500">
+<img src="https://media.giphy.com/media/QTtnjpO5Za63dxig1j/giphy.gif"  height="20" width="500">
 </p>
-<h3 align="left">
+<h4 align="left">
   Frontend Deployed on Netlify &#160; <img src="https://media.giphy.com/media/FbUuPsOW3oOCdAHexF/giphy.gif" width="50"> &#160; https://b-l-o-g.netlify.app/
-</h3>
-<h3 align="left">
+</h4>
+<h4 align="left">
   Backend Deployed on Vercel &#160; <img src="https://media.giphy.com/media/FbUuPsOW3oOCdAHexF/giphy.gif" width="50"> &#160; https://blogity-blog.vercel.app/
-</h3>
+</h4>
 <p align="left">
-<img src="https://user-images.githubusercontent.com/114053180/223065824-02021921-0562-4936-a1e9-6db07116d7d2.gif"  height="0.5" width="500">
+<img src="https://media.giphy.com/media/QTtnjpO5Za63dxig1j/giphy.gif"  height="20" width="500">
 </p>
 
 ## TECHNOLOGY
 
  Created using `HTML`, `SCSS`, `JAVASCRIPT`, `NODE.JS`, `REACT`, `VITE`, `EXPRESS`, `MONGODB`
+ 
+ <br>
+ 
+ ### How to start backend
+ 
+ ```bash
+ git clone https://github.com/tathagatamishra/MyBlog.git
+ cd server
+ npm i
+ npm run dev
+ ```
+ 
+ ### How to start frontend
+ 
+ ```bash
+ git clone https://github.com/tathagatamishra/MyBlog.git
+ cd client
+ npm i
+ npm run dev
+ ```
+ 
+<br>
 
 ---
 
